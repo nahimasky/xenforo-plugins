@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phrases>
+  <phrase title="admin_navigation.skyProfilePins" version_id="1002000" version_string="1.2.0"><![CDATA[Sky — Profile Pins]]></phrase>
+  <phrase title="admin_navigation.skyProfilePinsOptions" version_id="1002000" version_string="1.2.0"><![CDATA[Настройки закреплений профиля]]></phrase>
+  <phrase title="admin_permission.profilePins" version_id="1002000" version_string="1.2.0"><![CDATA[Управление Sky — Profile Pins]]></phrase>
+  <phrase title="option.skyProfilePinsEnabled" version_id="1002000" version_string="1.2.0"><![CDATA[Включить закрепления на стене профиля]]></phrase>
+  <phrase title="option.skyProfilePinsMaximumPerWall" version_id="1002002" version_string="1.2.2"><![CDATA[Максимум закреплённых записей на стене]]></phrase>
+  <phrase title="option_explain.skyProfilePinsEnabled" version_id="1002000" version_string="1.2.0"><![CDATA[Если отключить, кнопки закрепления скрываются, а новые операции закрепления запрещаются без удаления текущей отметки.]]></phrase>
+  <phrase title="option_explain.skyProfilePinsMaximumPerWall" version_id="1002002" version_string="1.2.2"><![CDATA[От 1 до 10. Лимит применяется на сервере и не может быть обойдён прямым запросом.]]></phrase>
+  <phrase title="option_group.skyProfilePins" version_id="1002000" version_string="1.2.0"><![CDATA[Sky — Profile Pins]]></phrase>
+  <phrase title="option_group_description.skyProfilePins" version_id="1002002" version_string="1.2.2"><![CDATA[Настройка закреплений записей наверху профильной стены.]]></phrase>
+  <phrase title="permission.profilePins_manageOtherWalls" version_id="1002000" version_string="1.2.0"><![CDATA[Управлять закреплениями на чужих профильных стенах]]></phrase>
+  <phrase title="permission_interface.profilePins" version_id="1002000" version_string="1.2.0"><![CDATA[Sky — Profile Pins]]></phrase>
+  <phrase title="sky_profile_pins_confirm_pin" version_id="1002002" version_string="1.2.2"><![CDATA[Закрепить эту запись наверху стены профиля?]]></phrase>
+  <phrase title="sky_profile_pins_confirm_unpin" version_id="1002002" version_string="1.2.2"><![CDATA[Открепить эту запись от стены профиля?]]></phrase>
+  <phrase title="sky_profile_pins_limit_reached" version_id="1002002" version_string="1.2.2"><![CDATA[На этой стене уже достигнут лимит закреплённых записей: {maximum}.]]></phrase>
+  <phrase title="sky_profile_pins_pin" version_id="1002000" version_string="1.2.0"><![CDATA[Закрепить запись]]></phrase>
+  <phrase title="sky_profile_pins_pinned" version_id="1002000" version_string="1.2.0"><![CDATA[Запись закреплена вверху стены профиля.]]></phrase>
+  <phrase title="sky_profile_pins_pinned_label" version_id="1002000" version_string="1.2.0"><![CDATA[Закреплено]]></phrase>
+  <phrase title="sky_profile_pins_unpin" version_id="1002000" version_string="1.2.0"><![CDATA[Открепить запись]]></phrase>
+  <phrase title="sky_profile_pins_unpinned" version_id="1002000" version_string="1.2.0"><![CDATA[Запись откреплена от стены профиля.]]></phrase>
+</phrases>

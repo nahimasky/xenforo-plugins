@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template_modifications>
+  <modification type="public" template="app.less" modification_key="sky_profile_pins_public_less" description="Includes ProfilePins public stylesheet in the XenForo application bundle." execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[{{ include('app_content_vote.less') }}]]></find>
+    <replace><![CDATA[$0
+{{ include('sky_profile_pins.less') }}]]></replace>
+  </modification>
+  <modification type="public" template="profile_post_macros" modification_key="sky_profile_pins_pinned_label" description="Shows a compact pinned label in the native profile-post attribution." execution_order="11" enabled="1" action="preg_replace">
+    <find><![CDATA[#(<h4 class="attribution">[\s\S]*?</h4>)#]]></find>
+    <replace><![CDATA[$1
+	<xf:if is="$profilePost.sky_profile_pinned"><span class="skyProfilePins-label">· {{ phrase('sky_profile_pins_pinned_label') }}</span></xf:if>]]></replace>
+  </modification>
+  <modification type="public" template="profile_post_macros" modification_key="sky_profile_pins_profile_post_menu_item" description="Adds the profile-wall pin action to the native More menu." execution_order="10" enabled="1" action="preg_replace">
+    <find><![CDATA[#(<xf:if is="\$profilePost\.canReport\(\)">[\s\S]*?</xf:if>\s*<xf:set var="\$hasActionBarMenu" value="\{\{ false \}\}" />)#]]></find>
+    <replace><![CDATA[$1
+										<xf:if is="$profilePost.canManageSkyProfilePin()">
+											<xf:callback class="Sky\ProfilePins\Template\Callback" method="renderProfilePostPinMenuItem" params="{'profilePost': $profilePost}" />
+											<xf:set var="$hasActionBarMenu" value="{{ true }}" />
+										</xf:if>]]></replace>
+  </modification>
+</template_modifications>

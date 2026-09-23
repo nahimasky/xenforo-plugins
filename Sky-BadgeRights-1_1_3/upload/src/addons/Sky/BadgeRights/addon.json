@@ -1,0 +1,21 @@
+{
+    "legacy_addon_id": "",
+    "title": "Sky - Badge Rights",
+    "description": "Автоматизирует выдачу плашек и безопасно синхронизирует модераторский статус с вторичными группами.",
+    "version_id": 1001003,
+    "version_string": "1.1.3",
+    "dev": "sky.",
+    "dev_url": "https://github.com/nahimasky",
+    "faq_url": "",
+    "support_url": "https://t.me/krlsky",
+    "extra_urls": {
+        "VK": "https://vk.ru/krlsky"
+    },
+    "require": {
+        "XF": [
+            2020000,
+            "XenForo 2.2.0+"
+        ]
+    },
+    "icon": "fa-id-badge"
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<admin_navigation>
+  <admin_navigation_entry navigation_id="bsBadgeStudio" parent_navigation_id="users" display_order="900" icon="fa-award" admin_permission_id="badgeStudio" debug_only="0" development_only="0" hide_no_children="1"/>
+  <admin_navigation_entry navigation_id="bsBadgeStudioBadges" parent_navigation_id="bsBadgeStudio" display_order="100" link="bs-badges" admin_permission_id="badgeStudio" debug_only="0" development_only="0" hide_no_children="0"/>
+  <admin_navigation_entry navigation_id="bsBadgeStudioUsers" parent_navigation_id="bsBadgeStudio" display_order="200" link="bs-user-badges" admin_permission_id="badgeStudio" debug_only="0" development_only="0" hide_no_children="0"/>
+</admin_navigation>

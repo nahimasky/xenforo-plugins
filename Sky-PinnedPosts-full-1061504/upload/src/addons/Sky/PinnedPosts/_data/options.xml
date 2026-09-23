@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<options>
+  <option option_id="skyPinnedPostsEnableAlerts" edit_format="onoff" data_type="boolean" advanced="0">
+    <default_value>1</default_value>
+    <relation group_id="skyPinnedPosts" display_order="40"/>
+  </option>
+  <option option_id="skyPinnedPostsEnabled" edit_format="onoff" data_type="boolean" advanced="0">
+    <default_value>1</default_value>
+    <relation group_id="skyPinnedPosts" display_order="10"/>
+  </option>
+  <option option_id="skyPinnedPostsEnabledNodeIds" edit_format="textbox" data_type="string" advanced="0">
+    <default_value></default_value>
+    <relation group_id="skyPinnedPosts" display_order="60"/>
+  </option>
+  <option option_id="skyPinnedPostsLabelLength" edit_format="textbox" data_type="positive_integer" advanced="0">
+    <default_value>40</default_value>
+    <relation group_id="skyPinnedPosts" display_order="30"/>
+  </option>
+  <option option_id="skyPinnedPostsMaxPins" edit_format="textbox" data_type="positive_integer" advanced="0">
+    <default_value>3</default_value>
+    <relation group_id="skyPinnedPosts" display_order="20"/>
+  </option>
+  <option option_id="skyPinnedPostsShowOriginalMarker" edit_format="onoff" data_type="boolean" advanced="0">
+    <default_value>1</default_value>
+    <relation group_id="skyPinnedPosts" display_order="50"/>
+  </option>
+</options>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+  <template type="admin" title="scb_blueprint_edit" version_id="1000000" version_string="1.0.0"><![CDATA[<xf:title>{{ $blueprint.blueprint_id ? phrase('scb_edit_blueprint') : phrase('scb_add_blueprint') }}</xf:title>
+
+<xf:form action="{{ $blueprint.blueprint_id ? link('sky-composer-blueprints/edit', $blueprint) : link('sky-composer-blueprints/add') }}" class="block" ajax="true">
+    <div class="block-container">
+        <xf:textboxrow name="title" value="{$blueprint.title}" maxlength="100" label="{{ phrase('scb_blueprint_title') }}" />
+        <xf:textarearow name="description" value="{$blueprint.description}" maxlength="255" label="{{ phrase('scb_blueprint_description') }}" />
+        <xf:editorrow name="message" value="{$blueprint.message}" label="{{ phrase('scb_blueprint_message') }}" />
+
+        <xf:checkboxrow label="{{ phrase('scb_blueprint_contexts') }}">
+            <xf:option name="contexts[]" value="new_thread" selected="{{ in_array('new_thread', $blueprint.contexts) }}">{{ phrase('scb_context_new_thread') }}</xf:option>
+            <xf:option name="contexts[]" value="thread_reply" selected="{{ in_array('thread_reply', $blueprint.contexts) }}">{{ phrase('scb_context_thread_reply') }}</xf:option>
+        </xf:checkboxrow>
+
+        <xf:selectrow name="node_ids[]" multiple="multiple" size="8" label="{{ phrase('scb_blueprint_forum_scope') }}" hint="{{ phrase('scb_all_forums_when_empty') }}">
+            <xf:foreach loop="$forums" value="$forum">
+                <xf:option value="{$forum.node_id}" selected="{{ in_array($forum.node_id, $blueprint.node_ids) }}">{$forum.title}</xf:option>
+            </xf:foreach>
+        </xf:selectrow>
+
+        <xf:numberboxrow name="display_order" value="{$blueprint.display_order}" min="0" label="{{ phrase('display_order') }}" />
+        <xf:checkboxrow>
+            <xf:option name="active" value="1" selected="{$blueprint.active}">{{ phrase('scb_blueprint_active') }}</xf:option>
+        </xf:checkboxrow>
+
+        <xf:submitrow submit="{{ phrase('save') }}" icon="save" />
+    </div>
+</xf:form>]]></template>
+  <template type="admin" title="scb_blueprint_list" version_id="1000000" version_string="1.0.0"><![CDATA[<xf:title>{{ phrase('scb_blueprint_library') }}</xf:title>
+
+<xf:pageaction>
+    <xf:button href="{{ link('sky-composer-blueprints/add') }}" icon="add">{{ phrase('scb_add_blueprint') }}</xf:button>
+</xf:pageaction>
+
+<xf:if is="$blueprints is not empty">
+    <div class="block">
+        <div class="block-container">
+            <xf:datalist>
+                <xf:datarow rowtype="header">
+                    <xf:cell>{{ phrase('title') }}</xf:cell>
+                    <xf:cell>{{ phrase('scb_blueprint_description') }}</xf:cell>
+                    <xf:cell>{{ phrase('scb_blueprint_contexts') }}</xf:cell>
+                </xf:datarow>
+                <xf:foreach loop="$blueprints" value="$blueprint">
+                    <xf:datarow>
+                        <xf:cell>{$blueprint.title}</xf:cell>
+                        <xf:cell>{$blueprint.description}</xf:cell>
+                        <xf:cell>{$blueprint.contexts|join(', ')}</xf:cell>
+                    </xf:datarow>
+                </xf:foreach>
+            </xf:datalist>
+        </div>
+    </div>
+<xf:else />
+    <div class="blockMessage">{{ phrase('scb_no_blueprints') }}</div>
+</xf:if>]]></template>
+  <template type="public" title="scb_blueprint_public_list" version_id="1000000" version_string="1.0.0"><![CDATA[<xf:if is="$blueprints is not empty">
+    <div class="block" data-xf-init="scb-blueprint-list">
+        <div class="block-container">
+            <xf:foreach loop="$blueprints" value="$blueprint">
+                <div class="block-row">
+                    <button type="button" class="button js-scbInsertBlueprint" data-scb-html="{$blueprint.editor_html}" data-scb-message="{$blueprint.message}">{$blueprint.title}</button>
+                    <xf:if is="$blueprint.description">
+                        <div class="block-minorHeader">{$blueprint.description}</div>
+                    </xf:if>
+                </div>
+            </xf:foreach>
+        </div>
+    </div>
+<xf:else />
+    <div class="blockMessage">{{ phrase('scb_no_available_blueprints') }}</div>
+</xf:if>]]></template>
+  <template type="public" title="scb_blueprint_trigger" version_id="1000000" version_string="1.0.0"><![CDATA[<xf:js src="sky/composer_blueprints/blueprints.js" />
+<a href="{{ link('composer-blueprints/list', null, {'context': $context, 'node_id': $nodeId, 'thread_id': $threadId}) }}" class="button button--link js-scbOpenBlueprints" data-xf-click="overlay" data-xf-init="scb-blueprint-trigger">
+    <xf:fa icon="fa-file-alt" /> {{ phrase('scb_open_blueprints') }}
+</a>]]></template>
+</templates>

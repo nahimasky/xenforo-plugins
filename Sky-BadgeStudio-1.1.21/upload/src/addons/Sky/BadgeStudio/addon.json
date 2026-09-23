@@ -1,0 +1,27 @@
+{
+  "legacy_addon_id": "",
+  "title": "Sky - Badge Studio",
+  "description": "Конструктор кастомных бейджей: иконка, цвет и назначение пользователям с выводом поверх аватарки.",
+  "version_id": 1001310,
+  "version_string": "1.1.21",
+  "dev": "sky.",
+  "dev_url": "https://github.com/nahimasky",
+  "faq_url": "",
+  "support_url": "https://t.me/krlsky",
+  "extra_urls": {
+    "VK": "https://vk.ru/krlsky"
+  },
+  "require": {
+    "XF": [
+      2020000,
+      "XenForo 2.2.0+"
+    ]
+  },
+  "icon": "fa-award",
+  "authors": [
+    {
+      "name": "sky.",
+      "url": "https://github.com/nahimasky"
+    }
+  ]
+}

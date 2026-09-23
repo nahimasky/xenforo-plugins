@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phrases>
+  <phrase title="option.skyPinnedPostsEnableAlerts" version_id="1061300" version_string="1.6.13-test"><![CDATA[Уведомлять автора сообщения]]></phrase>
+  <phrase title="option.skyPinnedPostsEnabled" version_id="1061300" version_string="1.6.13-test"><![CDATA[Включить закреплённые сообщения]]></phrase>
+  <phrase title="option.skyPinnedPostsEnabledNodeIds" version_id="1061300" version_string="1.6.13-test"><![CDATA[Разрешённые узлы]]></phrase>
+  <phrase title="option.skyPinnedPostsLabelLength" version_id="1061300" version_string="1.6.13-test"><![CDATA[Максимальная длина метки]]></phrase>
+  <phrase title="option.skyPinnedPostsMaxPins" version_id="1061300" version_string="1.6.13-test"><![CDATA[Лимит закреплений в одной теме]]></phrase>
+  <phrase title="option.skyPinnedPostsShowOriginalMarker" version_id="1061300" version_string="1.6.13-test"><![CDATA[Показывать индикатор у исходного сообщения]]></phrase>
+  <phrase title="option_explain.skyPinnedPostsEnableAlerts" version_id="1061300" version_string="1.6.13-test"><![CDATA[Отправлять уведомление автору, когда другой участник закрепляет его сообщение.]]></phrase>
+  <phrase title="option_explain.skyPinnedPostsEnabled" version_id="1061300" version_string="1.6.13-test"><![CDATA[Выключите, чтобы временно отключить закрепление сообщений во всех форумах без удаления данных.]]></phrase>
+  <phrase title="option_explain.skyPinnedPostsEnabledNodeIds" version_id="1061300" version_string="1.6.13-test"><![CDATA[ID форумных узлов через запятую. Пустое поле включает закрепления во всех форумах.]]></phrase>
+  <phrase title="option_explain.skyPinnedPostsLabelLength" version_id="1061300" version_string="1.6.13-test"><![CDATA[От 10 до 60 символов. По умолчанию — 40.]]></phrase>
+  <phrase title="option_explain.skyPinnedPostsMaxPins" version_id="1061300" version_string="1.6.13-test"><![CDATA[От 1 до 20. По умолчанию — 3.]]></phrase>
+  <phrase title="option_explain.skyPinnedPostsShowOriginalMarker" version_id="1061301" version_string="1.6.13-test-fixed"><![CDATA[Показывать метку «Закреплено» в верхней части закреплённого сообщения в ленте.]]></phrase>
+  <phrase title="option_group.skyPinnedPosts" version_id="1061300" version_string="1.6.13-test"><![CDATA[Sky — Закреплённые сообщения]]></phrase>
+  <phrase title="option_group_description.skyPinnedPosts" version_id="1061300" version_string="1.6.13-test"><![CDATA[Настройка закрепления отдельных сообщений в темах.]]></phrase>
+  <phrase title="option_group_skyPinnedPosts" version_id="0"><![CDATA[Sky — Закреплённые сообщения]]></phrase>
+  <phrase title="option_group_skyPinnedPosts_description" version_id="0"><![CDATA[Настройка закрепления отдельных сообщений в темах.]]></phrase>
+  <phrase title="option_skyPinnedPostsEnableAlerts" version_id="0"><![CDATA[Уведомлять автора сообщения]]></phrase>
+  <phrase title="option_skyPinnedPostsEnableAlerts_explain" version_id="0"><![CDATA[Отправлять уведомление автору, когда другой участник закрепляет его сообщение.]]></phrase>
+  <phrase title="option_skyPinnedPostsEnabled" version_id="1061300" version_string="1.6.13-test"><![CDATA[Включить закреплённые сообщения]]></phrase>
+  <phrase title="option_skyPinnedPostsEnabledNodeIds" version_id="0"><![CDATA[Разрешённые узлы]]></phrase>
+  <phrase title="option_skyPinnedPostsEnabledNodeIds_explain" version_id="0"><![CDATA[ID форумных узлов через запятую. Пустое поле включает закрепления во всех форумах.]]></phrase>
+  <phrase title="option_skyPinnedPostsEnabled_explain" version_id="1061300" version_string="1.6.13-test"><![CDATA[Выключите, чтобы временно отключить закрепление сообщений во всех форумах без удаления данных.]]></phrase>
+  <phrase title="option_skyPinnedPostsLabelLength" version_id="0"><![CDATA[Максимальная длина метки]]></phrase>
+  <phrase title="option_skyPinnedPostsLabelLength_explain" version_id="0"><![CDATA[От 10 до 60 символов. По умолчанию — 40.]]></phrase>
+  <phrase title="option_skyPinnedPostsMaxPins" version_id="0"><![CDATA[Лимит закреплений в одной теме]]></phrase>
+  <phrase title="option_skyPinnedPostsMaxPins_explain" version_id="0"><![CDATA[От 1 до 20. По умолчанию — 3.]]></phrase>
+  <phrase title="option_skyPinnedPostsShowOriginalMarker" version_id="0"><![CDATA[Показывать индикатор у исходного сообщения]]></phrase>
+  <phrase title="option_skyPinnedPostsShowOriginalMarker_explain" version_id="1061301" version_string="1.6.13-test-fixed"><![CDATA[Показывать метку «Закреплено» в верхней части закреплённого сообщения в ленте.]]></phrase>
+  <phrase title="permission.skyPinnedPosts_skyPinnedPostsPin" version_id="1061400" version_string="1.6.14-test-own-threads"><![CDATA[Закреплять сообщения в любых темах]]></phrase>
+  <phrase title="permission.skyPinnedPosts_skyPinnedPostsUnpin" version_id="1061400" version_string="1.6.14-test-own-threads"><![CDATA[Откреплять и менять порядок закреплённых сообщений в любых темах]]></phrase>
+  <phrase title="permission_interface.skyPinnedPosts" version_id="1061300" version_string="1.6.13-test"><![CDATA[Sky — Закреплённые сообщения]]></phrase>
+  <phrase title="sky_pinnedposts.alert_pinned_your_post" version_id="0"><![CDATA[закрепил(а) ваше сообщение в теме]]></phrase>
+  <phrase title="sky_pinnedposts.already_pinned" version_id="0"><![CDATA[Это сообщение уже закреплено в данной теме.]]></phrase>
+  <phrase title="sky_pinnedposts.limit_reached" version_id="0"><![CDATA[Достигнут лимит закреплённых сообщений в этой теме. Сначала открепите одно из существующих.]]></phrase>
+  <phrase title="sky_pinnedposts.manage_pin" version_id="0"><![CDATA[Управление закреплённым сообщением]]></phrase>
+  <phrase title="sky_pinnedposts.move_down" version_id="0"><![CDATA[Переместить ниже]]></phrase>
+  <phrase title="sky_pinnedposts.move_up" version_id="0"><![CDATA[Переместить выше]]></phrase>
+  <phrase title="sky_pinnedposts.open_post" version_id="0"><![CDATA[Открыть сообщение]]></phrase>
+  <phrase title="sky_pinnedposts.pin" version_id="0"><![CDATA[Закрепить]]></phrase>
+  <phrase title="sky_pinnedposts.pin_confirm_text" version_id="0"><![CDATA[Сообщение появится в верхнем блоке закреплённых сообщений. В одной теме можно закрепить не более {limit} сообщений.]]></phrase>
+  <phrase title="sky_pinnedposts.pin_label" version_id="0"><![CDATA[Метка закрепления]]></phrase>
+  <phrase title="sky_pinnedposts.pin_label_explain" version_id="0"><![CDATA[Необязательно. Например: Важное, Решение, Инструкция или FAQ.]]></phrase>
+  <phrase title="sky_pinnedposts.pin_this_post" version_id="0"><![CDATA[Закрепить это сообщение в теме?]]></phrase>
+  <phrase title="sky_pinnedposts.pinned_count" version_id="0"><![CDATA[Закреплено: {count}]]></phrase>
+  <phrase title="sky_pinnedposts.pinned_marker" version_id="0"><![CDATA[Закреплено]]></phrase>
+  <phrase title="sky_pinnedposts.pinned_posts" version_id="0"><![CDATA[Закреплённые сообщения]]></phrase>
+  <phrase title="sky_pinnedposts.someone" version_id="0"><![CDATA[Кто-то]]></phrase>
+  <phrase title="sky_pinnedposts.unpin" version_id="0"><![CDATA[Открепить]]></phrase>
+  <phrase title="sky_pinnedposts.unpin_confirm_text" version_id="0"><![CDATA[Сообщение будет убрано из блока закреплённых сообщений этой темы.]]></phrase>
+  <phrase title="sky_pinnedposts.unpin_this_post" version_id="0"><![CDATA[Открепить это сообщение?]]></phrase>
+  <phrase title="sky_pinnedposts_option_alerts_explain" version_id="0"><![CDATA[Отправлять уведомление автору, когда другой участник закрепляет его сообщение.]]></phrase>
+  <phrase title="sky_pinnedposts_option_alerts_title" version_id="0"><![CDATA[Уведомлять автора сообщения]]></phrase>
+  <phrase title="sky_pinnedposts_option_label_length_explain" version_id="0"><![CDATA[От 10 до 60 символов. По умолчанию — 40.]]></phrase>
+  <phrase title="sky_pinnedposts_option_label_length_title" version_id="0"><![CDATA[Максимальная длина метки]]></phrase>
+  <phrase title="sky_pinnedposts_option_marker_explain" version_id="1061301" version_string="1.6.13-test-fixed"><![CDATA[Добавляет небольшую метку «Закреплено» в верхней части закреплённого сообщения в ленте.]]></phrase>
+  <phrase title="sky_pinnedposts_option_marker_title" version_id="0"><![CDATA[Показывать индикатор у исходного сообщения]]></phrase>
+  <phrase title="sky_pinnedposts_option_max_pins_explain" version_id="0"><![CDATA[От 1 до 20. По умолчанию — 3.]]></phrase>
+  <phrase title="sky_pinnedposts_option_max_pins_title" version_id="0"><![CDATA[Лимит закреплений в одной теме]]></phrase>
+  <phrase title="sky_pinnedposts_option_nodes_explain" version_id="0"><![CDATA[ID форумных узлов через запятую, например: 25, 41, 73. Если оставить пустым, закрепления доступны во всех форумах.]]></phrase>
+  <phrase title="sky_pinnedposts_option_nodes_title" version_id="0"><![CDATA[Разрешённые узлы]]></phrase>
+</phrases>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phrases>
+  <phrase title="admin_navigation.skyBadgeRights" version_id="1000000" version_string="1.0.0" global_cache="1"><![CDATA[Sky Badge Rights]]></phrase>
+  <phrase title="admin_navigation.skyBadgeRightsMap" version_id="1000000" version_string="1.0.0" global_cache="1"><![CDATA[Настройка плашек]]></phrase>
+  <phrase title="admin_permission.manageBadgeRights" version_id="1000000" version_string="1.0.0" global_cache="1"><![CDATA[Управление выдачей плашек (Sky Badge Rights)]]></phrase>
+
+  <phrase title="sbr_badge_rights_mappings" version_id="1000000" version_string="1.0.0"><![CDATA[Настройка плашек — Sky Badge Rights]]></phrase>
+  <phrase title="sbr_mapping_list_explain" version_id="1000000" version_string="1.0.0"><![CDATA[Здесь вы отмечаете, какие вторичные группы (плашки) должны считаться модераторскими. Права на разделы для этих групп по-прежнему настраиваются один раз через Nodes → Permissions — аддон их не трогает. Он только выдаёт/снимает саму группу и, если отмечено, синхронизирует запись в Users → Moderators, чтобы действия попадали в лог модератора.]]></phrase>
+  <phrase title="sbr_add_mapping" version_id="1000000" version_string="1.0.0"><![CDATA[Добавить плашку]]></phrase>
+  <phrase title="sbr_edit_mapping" version_id="1000000" version_string="1.0.0"><![CDATA[Редактировать плашку]]></phrase>
+  <phrase title="sbr_delete_mapping" version_id="1000000" version_string="1.0.0"><![CDATA[Удалить плашку]]></phrase>
+  <phrase title="sbr_delete_mapping_confirm" version_id="1000000" version_string="1.0.0"><![CDATA[Удалить настройку для плашки «{$group}»? Сама группа и права на разделы не будут затронуты. У пользователей с этой группой аддон перестанет считать её модераторской; созданная аддоном запись в Users → Moderators будет удалена только если она больше не нужна другим плашкам.]]></phrase>
+  <phrase title="sbr_no_mappings_yet" version_id="1000000" version_string="1.0.0"><![CDATA[Пока не настроено ни одной плашки. Нажмите «Добавить плашку», чтобы выбрать вторичную группу.]]></phrase>
+  <phrase title="sbr_badge_group" version_id="1000000" version_string="1.0.0"><![CDATA[Плашка (вторичная группа)]]></phrase>
+  <phrase title="sbr_badge_group_hint" version_id="1000000" version_string="1.0.0"><![CDATA[В списке показаны только группы, ещё не привязанные к другой плашке.]]></phrase>
+  <phrase title="sbr_logs_moderator_actions" version_id="1000000" version_string="1.0.0"><![CDATA[Логировать как модератора]]></phrase>
+  <phrase title="sbr_is_moderator_hint" version_id="1000000" version_string="1.0.0"><![CDATA[Если включено, при выдаче этой плашки пользователь автоматически появится в Users → Moderators (без прав супермодератора), и его действия будут попадать в лог. При снятии плашки запись уберётся сама, если она была создана этим аддоном.]]></phrase>
+  <phrase title="sbr_is_moderator_option" version_id="1000000" version_string="1.0.0"><![CDATA[Эта плашка даёт модераторские права и должна логироваться]]></phrase>
+  <phrase title="sbr_note" version_id="1000000" version_string="1.0.0"><![CDATA[Заметка]]></phrase>
+  <phrase title="sbr_note_hint" version_id="1000000" version_string="1.0.0"><![CDATA[Например: раздел, за который отвечает плашка. Видно только в ACP.]]></phrase>
+
+  <phrase title="sbr_assign_badges" version_id="1000000" version_string="1.0.0"><![CDATA[Выдача плашек — Sky Badge Rights]]></phrase>
+  <phrase title="sbr_no_mappings_configured" version_id="1000000" version_string="1.0.0"><![CDATA[Ни одна плашка ещё не настроена.]]></phrase>
+  <phrase title="sbr_configure_mappings_link" version_id="1000000" version_string="1.0.0"><![CDATA[Настроить плашки]]></phrase>
+  <phrase title="sbr_assign" version_id="1000000" version_string="1.0.0"><![CDATA[Выдать]]></phrase>
+  <phrase title="sbr_unassign" version_id="1000000" version_string="1.0.0"><![CDATA[Снять]]></phrase>
+  <phrase title="sbr_nobody_has_this_badge" version_id="1000000" version_string="1.0.0"><![CDATA[Плашка пока никому не выдана.]]></phrase>
+</phrases>

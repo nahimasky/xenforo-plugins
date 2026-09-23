@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+  <permission permission_group_id="profilePins" permission_id="manageOtherWalls" permission_type="flag" interface_group_id="profilePins" display_order="10"/>
+</permissions>

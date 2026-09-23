@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phrases>
+  <phrase title="admin_navigation.bsBadgeStudio" version_id="1001180" version_string="1.1.8" global_cache="1"><![CDATA[Badge Studio]]></phrase>
+  <phrase title="admin_navigation.bsBadgeStudioBadges" version_id="1001180" version_string="1.1.8" global_cache="1"><![CDATA[Библиотека бейджей]]></phrase>
+  <phrase title="admin_navigation.bsBadgeStudioUsers" version_id="1001180" version_string="1.1.8" global_cache="1"><![CDATA[Назначения бейджей]]></phrase>
+  <phrase title="admin_permission.badgeStudio" version_id="1001180" version_string="1.1.8" global_cache="1"><![CDATA[Управление Badge Studio]]></phrase>
+  <phrase title="bs_action_delete" version_id="1001220" version_string="1.1.12"><![CDATA[Удалить]]></phrase>
+  <phrase title="bs_action_edit" version_id="1001220" version_string="1.1.12"><![CDATA[Редактировать]]></phrase>
+  <phrase title="bs_action_save" version_id="1001220" version_string="1.1.12"><![CDATA[Сохранить]]></phrase>
+  <phrase title="bs_action_search" version_id="1001220" version_string="1.1.12"><![CDATA[Найти]]></phrase>
+  <phrase title="bs_add_badge" version_id="1001070" version_string="1.1.0" global_cache="1"><![CDATA[Добавить бейдж]]></phrase>
+  <phrase title="bs_badge_assign" version_id="1001070" version_string="1.1.0" global_cache="1"><![CDATA[Назначить бейдж]]></phrase>
+  <phrase title="bs_badge_change" version_id="1001220" version_string="1.1.12"><![CDATA[Изменение бейджа]]></phrase>
+  <phrase title="bs_badge_color" version_id="1001070" version_string="1.1.0" global_cache="1"><![CDATA[Цвет фона (HEX)]]></phrase>
+  <phrase title="bs_badge_color_hint" version_id="1001070" version_string="1.1.0"><![CDATA[Формат: #RRGGBB, например #C81E4D]]></phrase>
+  <phrase title="bs_badge_icon" version_id="1001070" version_string="1.1.0" global_cache="1"><![CDATA[Иконка]]></phrase>
+  <phrase title="bs_badge_library" version_id="1001070" version_string="1.1.0" global_cache="1"><![CDATA[Библиотека бейджей]]></phrase>
+  <phrase title="bs_badge_none" version_id="1001070" version_string="1.1.0" global_cache="1"><![CDATA[Без бейджа]]></phrase>
+  <phrase title="bs_badge_studio" version_id="1001070" version_string="1.1.0" global_cache="1"><![CDATA[Badge Studio]]></phrase>
+  <phrase title="bs_badge_title" version_id="1001070" version_string="1.1.0" global_cache="1"><![CDATA[Название бейджа]]></phrase>
+  <phrase title="bs_changed_by" version_id="1001220" version_string="1.1.12"><![CDATA[Изменил(а)]]></phrase>
+  <phrase title="bs_custom_fa_icon" version_id="1001190" version_string="1.1.9"><![CDATA[Пользовательская Font Awesome иконка]]></phrase>
+  <phrase title="bs_custom_fa_icon_hint" version_id="1001190" version_string="1.1.9"><![CDATA[Font Awesome 5: `fa-crown` будет сохранён как `fas fa-crown`; также можно указать fas, far или fab и один класс fa-..., например: fas fa-dragon.]]></phrase>
+  <phrase title="bs_custom_fa_icon_invalid" version_id="1001190" version_string="1.1.9"><![CDATA[Укажите Font Awesome 5 иконку в формате «fas fa-name», «far fa-name» или «fab fa-name» без дополнительных классов.]]></phrase>
+  <phrase title="bs_date" version_id="1001220" version_string="1.1.12"><![CDATA[Дата]]></phrase>
+  <phrase title="bs_delete_badge_confirm" version_id="1001070" version_string="1.1.0" global_cache="1"><![CDATA[Удалить этот бейдж? Он также будет снят со всех пользователей.]]></phrase>
+  <phrase title="bs_icon_award" version_id="1001070" version_string="1.1.0"><![CDATA[Награда]]></phrase>
+  <phrase title="bs_icon_bolt" version_id="1001070" version_string="1.1.0"><![CDATA[Молния]]></phrase>
+  <phrase title="bs_icon_check" version_id="1001070" version_string="1.1.0"><![CDATA[Галочка]]></phrase>
+  <phrase title="bs_icon_crown" version_id="1001070" version_string="1.1.0"><![CDATA[Корона]]></phrase>
+  <phrase title="bs_icon_custom_font_awesome" version_id="1001190" version_string="1.1.9"><![CDATA[Пользовательская Font Awesome]]></phrase>
+  <phrase title="bs_icon_flame" version_id="1001070" version_string="1.1.0"><![CDATA[Пламя]]></phrase>
+  <phrase title="bs_icon_gem" version_id="1001070" version_string="1.1.0"><![CDATA[Камень]]></phrase>
+  <phrase title="bs_icon_heart" version_id="1001070" version_string="1.1.0"><![CDATA[Сердце]]></phrase>
+  <phrase title="bs_icon_letter" version_id="1001070" version_string="1.1.0"><![CDATA[Буква по названию]]></phrase>
+  <phrase title="bs_icon_music" version_id="1001070" version_string="1.1.0"><![CDATA[Музыка]]></phrase>
+  <phrase title="bs_icon_shield" version_id="1001070" version_string="1.1.0"><![CDATA[Щит]]></phrase>
+  <phrase title="bs_icon_star" version_id="1001070" version_string="1.1.0"><![CDATA[Звезда]]></phrase>
+  <phrase title="bs_icon_target" version_id="1001070" version_string="1.1.0"><![CDATA[Цель]]></phrase>
+  <phrase title="bs_no_badges" version_id="1001070" version_string="1.1.0"><![CDATA[Бейджи ещё не созданы.]]></phrase>
+  <phrase title="bs_username" version_id="1001220" version_string="1.1.12"><![CDATA[Имя пользователя]]></phrase>
+</phrases>

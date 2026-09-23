@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phrases>
+  <phrase title="admin_navigation.skyComposerBlueprints" version_id="1000000" version_string="1.0.0" global_cache="1"><![CDATA[Sky Composer Blueprints]]></phrase>
+  <phrase title="admin_permission.manageComposerBlueprints" version_id="1000000" version_string="1.0.0" global_cache="1"><![CDATA[Управление шаблонами Composer Blueprints]]></phrase>
+  <phrase title="permission.skyComposerBlueprints_useComposerBlueprints" version_id="1000000" version_string="1.0.0"><![CDATA[Использовать шаблоны Composer Blueprints]]></phrase>
+  <phrase title="permission_interface.skyComposerBlueprints" version_id="1000000" version_string="1.0.0"><![CDATA[Sky — Composer Blueprints]]></phrase>
+  <phrase title="scb_add_blueprint" version_id="1000000" version_string="1.0.0"><![CDATA[Добавить шаблон]]></phrase>
+  <phrase title="scb_all_forums_when_empty" version_id="1000000" version_string="1.0.0"><![CDATA[Оставьте поле пустым, чтобы использовать шаблон во всех доступных разделах.]]></phrase>
+  <phrase title="scb_blueprint_active" version_id="1000000" version_string="1.0.0"><![CDATA[Шаблон активен]]></phrase>
+  <phrase title="scb_blueprint_contexts" version_id="1000000" version_string="1.0.0"><![CDATA[Контексты]]></phrase>
+  <phrase title="scb_blueprint_description" version_id="1000000" version_string="1.0.0"><![CDATA[Описание]]></phrase>
+  <phrase title="scb_blueprint_forum_scope" version_id="1000000" version_string="1.0.0"><![CDATA[Разделы форума]]></phrase>
+  <phrase title="scb_blueprint_library" version_id="1000000" version_string="1.0.0"><![CDATA[Библиотека шаблонов]]></phrase>
+  <phrase title="scb_blueprint_message" version_id="1000000" version_string="1.0.0"><![CDATA[Содержимое шаблона]]></phrase>
+  <phrase title="scb_blueprint_title" version_id="1000000" version_string="1.0.0"><![CDATA[Название шаблона]]></phrase>
+  <phrase title="scb_context_new_thread" version_id="1000000" version_string="1.0.0"><![CDATA[Создание темы]]></phrase>
+  <phrase title="scb_context_thread_reply" version_id="1000000" version_string="1.0.0"><![CDATA[Ответ в теме]]></phrase>
+  <phrase title="scb_edit_blueprint" version_id="1000000" version_string="1.0.0"><![CDATA[Редактирование шаблона]]></phrase>
+  <phrase title="scb_no_available_blueprints" version_id="1000000" version_string="1.0.0"><![CDATA[В этом редакторе нет доступных шаблонов.]]></phrase>
+  <phrase title="scb_no_blueprints" version_id="1000000" version_string="1.0.0"><![CDATA[Шаблоны ещё не созданы.]]></phrase>
+  <phrase title="scb_open_blueprints" version_id="1000000" version_string="1.0.0"><![CDATA[Шаблоны]]></phrase>
+  <phrase title="scb_select_at_least_one_context" version_id="1000000" version_string="1.0.0"><![CDATA[Выберите хотя бы один контекст для шаблона.]]></phrase>
+  <phrase title="scb_select_valid_forums_only" version_id="1000000" version_string="1.0.0"><![CDATA[Выберите только существующие разделы форума.]]></phrase>
+</phrases>

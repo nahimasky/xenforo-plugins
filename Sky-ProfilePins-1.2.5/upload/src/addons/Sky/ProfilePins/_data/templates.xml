@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+  <template type="public" title="sky_profile_pins.less" version_id="1002004" version_string="1.2.4"><![CDATA[.skyProfilePins-label
+{
+	margin-inline-start: 4px;
+	color: @xf-textColorMuted;
+	font-size: @xf-fontSizeSmall;
+}
+
+.skyProfilePins-menuItem
+{
+	display: none;
+}
+
+.skyProfilePins-menuItem ~ .actionBar-action--menuTrigger
+{
+	display: inline-block;
+}
+]]></template>
+  <template type="public" title="sky_profile_pins_profile_post_confirm" version_id="1002002" version_string="1.2.2"><![CDATA[<xf:title>{{ $isPinned ? phrase('sky_profile_pins_unpin') : phrase('sky_profile_pins_pin') }}</xf:title>
+<xf:breadcrumb href="{{ link('members', $profileUser) }}">{$profileUser.username}</xf:breadcrumb>
+<xf:form action="{{ link('profile-posts/sky-pin', $profilePost) }}" class="block" ajax="true">
+	<div class="block-container">
+		<div class="block-body">
+			<div class="block-row">
+				{{ $isPinned ? phrase('sky_profile_pins_confirm_unpin') : phrase('sky_profile_pins_confirm_pin') }}
+			</div>
+		</div>
+		<div class="block-footer">
+			<span class="block-footer-controls">
+				<xf:button type="submit" icon="fa-thumbtack">{{ $isPinned ? phrase('sky_profile_pins_unpin') : phrase('sky_profile_pins_pin') }}</xf:button>
+			</span>
+		</div>
+	</div>
+	<xf:redirect />
+</xf:form>]]></template>
+  <template type="public" title="sky_profile_pins_profile_post_menu_item" version_id="1002003" version_string="1.2.3"><![CDATA[<a href="{{ link('profile-posts/sky-pin', $profilePost) }}"
+	class="actionBar-action actionBar-action--menuItem skyProfilePins-menuItem"
+	data-xf-click="overlay">
+	<xf:fa icon="fa-thumbtack" />
+	<xf:if is="$isPinned">
+		{{ phrase('sky_profile_pins_unpin') }}
+	<xf:else />
+		{{ phrase('sky_profile_pins_pin') }}
+	</xf:if>
+</a>]]></template>
+</templates>

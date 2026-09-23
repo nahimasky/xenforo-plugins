@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+  <template type="public" title="alert_user_sky_pinnedposts_pinned" version_id="1060100" version_string="1.6.1"><![CDATA[<xf:if is="$user">
+    <a href="{{ link('members', $user) }}">{$user.username}</a>
+<xf:else />
+    {{ phrase('sky_pinnedposts.someone') }}
+</xf:if>
+{{ phrase('sky_pinnedposts.alert_pinned_your_post') }}
+<xf:if is="$extra.thread_id">
+    <a href="{{ link('threads', $extra.thread_id, {'post_id': $extra.post_id}) }}#post-{$extra.post_id}">{$extra.thread_title}</a>
+</xf:if>]]></template>
+  <template type="public" title="sky_pinnedposts.less" version_id="1061301" version_string="1.6.13-test-fixed"><![CDATA[.sky-pinnedPosts
+{
+    margin: 8px 0 16px;
+
+    .block-container
+    {
+        overflow: hidden;
+        border-radius: @xf-borderRadiusMedium;
+    }
+}
+
+.sky-pinnedPosts-header
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 16px;
+    border-bottom: 1px solid @xf-borderColor;
+
+    .block-minorHeader
+    {
+        margin: 0;
+        padding: 0;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1.35;
+        letter-spacing: .02em;
+    }
+}
+
+.sky-pinnedPosts-count
+{
+    flex: 0 0 auto;
+    color: @xf-diminishedTextColor;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.sky-pinnedPosts-body
+{
+    margin: 0;
+    padding: 0;
+}
+
+.sky-pinnedPost
+{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 16px;
+    border-top: 1px solid @xf-borderColor;
+
+    &:first-child
+    {
+        border-top: 0;
+    }
+}
+
+.sky-pinnedPost-avatar
+{
+    flex: 0 0 auto;
+}
+
+.sky-pinnedPost-content
+{
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.sky-pinnedPost-meta
+{
+    display: flex;
+    align-items: baseline;
+    min-width: 0;
+    color: @xf-diminishedTextColor;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.sky-pinnedPost-label
+{
+	flex: 0 0 auto;
+	max-width: 120px;
+	overflow: hidden;
+	margin-right: 6px;
+	padding: 1px 6px;
+	border: 1px solid @xf-borderColor;
+	border-radius: @xf-borderRadiusSmall;
+	color: @xf-diminishedTextColor;
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: .02em;
+	line-height: 16px;
+	text-overflow: ellipsis;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.sky-pinnedPost-meta .username
+{
+	overflow: hidden;
+    color: inherit;
+    font-weight: 600;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &:hover
+    {
+        color: inherit;
+        text-decoration: underline;
+    }
+}
+
+.sky-pinnedPost-separator
+{
+    flex: 0 0 auto;
+    margin: 0 5px;
+}
+
+.sky-pinnedPost-date
+{
+    flex: 0 1 auto;
+    overflow: hidden;
+    color: inherit;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &:hover
+    {
+        color: inherit;
+        text-decoration: underline;
+    }
+}
+
+.sky-pinnedPost-message
+{
+    display: -webkit-box;
+    overflow: hidden;
+    margin-top: 4px;
+    color: @xf-textColor;
+    font-size: 13px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+
+    > :first-child
+    {
+        margin-top: 0;
+    }
+
+    > :last-child
+    {
+        margin-bottom: 0;
+    }
+
+    img
+    {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.sky-pinnedPost-footer
+{
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.sky-pinnedPost-open
+{
+    color: @xf-linkColor;
+    text-decoration: none;
+
+    &:hover
+    {
+        text-decoration: underline;
+    }
+}
+
+.sky-pinnedPost-actions
+{
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 2px;
+    margin-left: 4px;
+}
+
+.sky-pinnedPost-actionForm
+{
+    margin: 0;
+}
+
+.sky-pinnedPost-action
+{
+    min-width: 28px;
+    min-height: 28px;
+    padding: 4px 7px;
+    color: @xf-diminishedTextColor;
+    font-size: 12px;
+    line-height: 18px;
+
+    &:hover
+    {
+        color: @xf-textColor;
+        text-decoration: none;
+    }
+}
+
+.sky-pinnedPost-unpin
+{
+	width: auto;
+	margin-left: 2px;
+}
+
+.sky-pinnedPost-unpinIcon
+{
+	display: none;
+}
+
+.sky-pinnedPost-topMarker
+{
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	margin: 0 0 8px;
+	padding: 3px 7px;
+	border-radius: @xf-borderRadiusSmall;
+	font-size: 11px;
+	font-weight: 700;
+	line-height: 16px;
+}
+
+.sky-pinnedPosts-confirm .block-footer
+{
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media (max-width: 480px)
+{
+	.sky-pinnedPost
+	{
+		display: grid;
+		grid-template-columns: 42px minmax(0, 1fr);
+		grid-template-areas:
+			"avatar content"
+			". actions";
+		column-gap: 10px;
+		row-gap: 8px;
+	}
+
+	.sky-pinnedPost-avatar
+	{
+		grid-area: avatar;
+	}
+
+	.sky-pinnedPost-content
+	{
+		grid-area: content;
+		min-width: 0;
+	}
+
+	.sky-pinnedPost-actions
+	{
+		grid-area: actions;
+		width: auto;
+		justify-content: flex-start;
+		gap: 6px;
+		margin: 0;
+	}
+
+	.sky-pinnedPost-action
+	{
+		min-width: 32px;
+		min-height: 32px;
+		padding: 6px 8px;
+	}
+
+	.sky-pinnedPost-unpin
+	{
+		width: 32px;
+		min-width: 32px;
+		margin-left: 0;
+		padding: 4px;
+		font-size: 18px;
+		line-height: 20px;
+	}
+
+	.sky-pinnedPost-unpinText
+	{
+		display: none;
+	}
+
+	.sky-pinnedPost-unpinIcon
+	{
+		display: inline;
+	}
+}
+]]></template>
+  <template type="public" title="sky_pinnedposts_list" version_id="1061301" version_string="1.6.13-test-fixed"><![CDATA[<xf:set var="$skyPinnedPosts" value="{{ $thread.getPinnedPosts() }}" />
+<xf:set var="$skyPinnedPostsForBlock" value="{{ $thread.getPinnedPostsForBlock($skyPinnedPosts) }}" />
+<xf:if is="$skyPinnedPostsForBlock is not empty">
+    <xf:css src="sky_pinnedposts.less" />
+
+    <section class="block sky-pinnedPosts" aria-label="{{ phrase('sky_pinnedposts.pinned_posts') }}">
+        <div class="block-container">
+            <div class="sky-pinnedPosts-header">
+                <h2 class="block-minorHeader">{{ phrase('sky_pinnedposts.pinned_posts') }}</h2>
+                <span class="sky-pinnedPosts-count">{{ phrase('sky_pinnedposts.pinned_count', {'count': count($skyPinnedPostsForBlock)}) }}</span>
+            </div>
+
+            <div class="block-body sky-pinnedPosts-body">
+                <xf:foreach loop="$skyPinnedPostsForBlock" value="$pinned" i="$skyIndex">
+                    <article class="sky-pinnedPost">
+                        <div class="sky-pinnedPost-avatar">
+                            <xf:avatar user="$pinned.Post.User" size="s" />
+                        </div>
+
+                        <div class="sky-pinnedPost-content">
+                            <div class="sky-pinnedPost-meta">
+                                <xf:if is="$pinned.pin_label">
+                                    <span class="sky-pinnedPost-label">{$pinned.pin_label}</span>
+                                </xf:if>
+                                <xf:username user="$pinned.Post.User" rich="true" />
+                                <span class="sky-pinnedPost-separator" aria-hidden="true">·</span>
+                                <a href="{{ link('threads', $thread, {'post_id': $pinned.post_id}) }}#post-{$pinned.post_id}" class="sky-pinnedPost-date">
+                                    <xf:date time="{$pinned.Post.post_date}" />
+                                </a>
+                            </div>
+
+                            <div class="sky-pinnedPost-message">
+                                {{ bb_code($pinned.Post.message, 'post', $pinned.Post) }}
+                            </div>
+
+                            <div class="sky-pinnedPost-footer">
+                                <a href="{{ link('threads', $thread, {'post_id': $pinned.post_id}) }}#post-{$pinned.post_id}" class="sky-pinnedPost-open">
+                                    {{ phrase('sky_pinnedposts.open_post') }}
+                                </a>
+                            </div>
+                        </div>
+
+                        <xf:if is="$thread.canManagePinnedPosts() OR $thread.canUnpinPost($pinned.Post)">
+                            <div class="sky-pinnedPost-actions" aria-label="{{ phrase('sky_pinnedposts.manage_pin') }}">
+                                <xf:if is="$thread.canManagePinnedPosts() AND $skyIndex > 1">
+                                    <xf:form action="{{ link('threads/pin-move', $thread) }}" ajax="true" class="sky-pinnedPost-actionForm">
+                                        <xf:hiddenval name="pinned_post_id">{$pinned.pinned_post_id}</xf:hiddenval>
+                                        <xf:hiddenval name="direction">up</xf:hiddenval>
+                                        <button type="submit" class="button button--link sky-pinnedPost-action" title="{{ phrase('sky_pinnedposts.move_up') }}" aria-label="{{ phrase('sky_pinnedposts.move_up') }}">
+                                            <span aria-hidden="true">↑</span>
+                                        </button>
+                                    </xf:form>
+                                </xf:if>
+
+                                <xf:if is="$thread.canManagePinnedPosts() AND $skyIndex < count($skyPinnedPostsForBlock)">
+                                    <xf:form action="{{ link('threads/pin-move', $thread) }}" ajax="true" class="sky-pinnedPost-actionForm">
+                                        <xf:hiddenval name="pinned_post_id">{$pinned.pinned_post_id}</xf:hiddenval>
+                                        <xf:hiddenval name="direction">down</xf:hiddenval>
+                                        <button type="submit" class="button button--link sky-pinnedPost-action" title="{{ phrase('sky_pinnedposts.move_down') }}" aria-label="{{ phrase('sky_pinnedposts.move_down') }}">
+                                            <span aria-hidden="true">↓</span>
+                                        </button>
+                                    </xf:form>
+                                </xf:if>
+
+                                <xf:if is="$thread.canUnpinPost($pinned.Post)">
+                                    <a href="{{ link('threads/unpin-post', $thread, {'post_id': $pinned.post_id}) }}" data-xf-click="overlay" class="button button--link sky-pinnedPost-action sky-pinnedPost-unpin" title="{{ phrase('sky_pinnedposts.unpin') }}" aria-label="{{ phrase('sky_pinnedposts.unpin') }}">
+                                        <span class="sky-pinnedPost-unpinText">{{ phrase('sky_pinnedposts.unpin') }}</span>
+                                        <span class="sky-pinnedPost-unpinIcon" aria-hidden="true">×</span>
+                                    </a>
+                                </xf:if>
+                            </div>
+                        </xf:if>
+                    </article>
+                </xf:foreach>
+            </div>
+        </div>
+    </section>
+</xf:if>]]></template>
+  <template type="public" title="sky_pinnedposts_pin_confirm" version_id="1060100" version_string="1.6.1"><![CDATA[<xf:title>{{ phrase('sky_pinnedposts.pin_this_post') }}</xf:title>
+<xf:css src="sky_pinnedposts.less" />
+
+<xf:form action="{{ link('threads/pin-post', $thread) }}" ajax="true" class="block sky-pinnedPosts-confirm">
+    <xf:hiddenval name="post_id">{$post.post_id}</xf:hiddenval>
+
+    <div class="block-container">
+        <div class="block-body">
+            <div class="block-row">{{ phrase('sky_pinnedposts.pin_confirm_text', {'limit': $thread.getPinnedPostsLimit()}) }}</div>
+            <xf:textboxrow name="pin_label" maxlength="{$thread.getPinnedPostsLabelLength()}" label="{{ phrase('sky_pinnedposts.pin_label') }}" explain="{{ phrase('sky_pinnedposts.pin_label_explain') }}" />
+        </div>
+        <div class="block-footer">
+            <xf:button type="submit" class="button--cta">{{ phrase('sky_pinnedposts.pin') }}</xf:button>
+        </div>
+    </div>
+</xf:form>]]></template>
+  <template type="public" title="sky_pinnedposts_unpin_confirm" version_id="1060100" version_string="1.6.1"><![CDATA[<xf:title>{{ phrase('sky_pinnedposts.unpin_this_post') }}</xf:title>
+<xf:css src="sky_pinnedposts.less" />
+
+<xf:form action="{{ link('threads/unpin-post', $thread) }}" ajax="true" class="block sky-pinnedPosts-confirm">
+    <xf:hiddenval name="post_id">{$post.post_id}</xf:hiddenval>
+
+    <div class="block-container">
+        <div class="block-body">
+            <div class="block-row">{{ phrase('sky_pinnedposts.unpin_confirm_text') }}</div>
+        </div>
+        <div class="block-footer">
+            <xf:button type="submit" class="button--cta">{{ phrase('sky_pinnedposts.unpin') }}</xf:button>
+        </div>
+    </div>
+</xf:form>]]></template>
+</templates>

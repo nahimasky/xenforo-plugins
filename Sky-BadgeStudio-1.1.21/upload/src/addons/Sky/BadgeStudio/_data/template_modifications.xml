@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template_modifications>
+  <modification type="public" template="alert_macros" modification_key="bs_badge_alert_xxs" description="Badge Studio — alert user avatar (size xxs)" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:avatar user="$alert.User" size="xxs" defaultname="{$alert.username}" />]]></find>
+    <replace><![CDATA[<div class="bsAvatarWrap{{ $alert.User.bs_badge ? ' bsAvatarWrap--hasBadge' : '' }}">
+	<xf:avatar user="$alert.User" size="xxs" defaultname="{$alert.username}" />
+    <xf:macro template="bs_badge_macros" name="badge" arg-user="{$alert.User}" arg-size="xxs" />
+</div>]]></replace>
+  </modification>
+  <modification type="public" template="conversation_list_macros" modification_key="bs_badge_conversation_s" description="Badge Studio — conversation starter avatar (size s)" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:avatar user="$userConv.Master.Starter" size="s" defaultname="{$userConv.Master.username}" />]]></find>
+    <replace><![CDATA[<div class="bsAvatarWrap{{ $userConv.Master.Starter.bs_badge ? ' bsAvatarWrap--hasBadge' : '' }}">
+	<xf:avatar user="$userConv.Master.Starter" size="s" defaultname="{$userConv.Master.username}" />
+    <xf:macro template="bs_badge_macros" name="badge" arg-user="{$userConv.Master.Starter}" arg-size="s" />
+</div>]]></replace>
+  </modification>
+  <modification type="public" template="member_list_macros" modification_key="bs_badge_member_list_s" description="Badge Studio — member list avatar (size s)" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:avatar user="$user" size="s" notooltip="true" />]]></find>
+    <replace><![CDATA[<div class="bsAvatarWrap{{ $user.bs_badge ? ' bsAvatarWrap--hasBadge' : '' }}">
+	<xf:avatar user="$user" size="s" notooltip="true" />
+    <xf:macro template="bs_badge_macros" name="badge" arg-user="{$user}" arg-size="s" />
+</div>]]></replace>
+  </modification>
+  <modification type="public" template="member_notable" modification_key="bs_badge_member_notable_xs" description="Badge Studio — notable member avatar (size xs)" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:avatar user="$data.user" size="xs" />]]></find>
+    <replace><![CDATA[<div class="bsAvatarWrap{{ $data.user.bs_badge ? ' bsAvatarWrap--hasBadge' : '' }}">
+	<xf:avatar user="$data.user" size="xs" />
+	<xf:macro template="bs_badge_macros" name="badge" arg-user="{$data.user}" arg-size="xs" />
+</div>]]></replace>
+  </modification>
+  <modification type="public" template="member_tooltip" modification_key="bs_badge_tooltip_m" description="Badge Studio — member tooltip avatar (size m)" execution_order="10" enabled="1" action="preg_replace">
+    <find><![CDATA[#<span class="memberTooltip-avatar">\s*<xf:avatar user="\{\$user\}" size="m" notooltip="true" />\s*</span>#]]></find>
+    <replace><![CDATA[<span class="memberTooltip-avatar">
+					<div class="bsAvatarWrap{{ $user.bs_badge ? ' bsAvatarWrap--hasBadge' : '' }}">
+						<xf:avatar user="{$user}" size="m" notooltip="true" />
+						<xf:macro template="bs_badge_macros" name="badge" arg-user="{$user}" arg-size="m" />
+					</div>
+				</span>]]></replace>
+  </modification>
+  <modification type="public" template="member_view" modification_key="bs_badge_profile_l" description="Badge Studio — profile avatar (size l)" execution_order="10" enabled="1" action="preg_replace">
+    <find><![CDATA[#<xf:avatar user="\{\$user\}" size="l"\s+href="\{\{ \$user\.getAvatarUrl\('o'\) \?: '' \}\}" />#]]></find>
+    <replace><![CDATA[<div class="bsAvatarWrap{{ $user.bs_badge ? ' bsAvatarWrap--hasBadge' : '' }}">
+    <xf:avatar user="{$user}" size="l" href="{{ $user.getAvatarUrl('o') ?: '' }}" />
+    <xf:macro template="bs_badge_macros" name="badge" arg-user="{$user}" arg-size="l" />
+</div>]]></replace>
+  </modification>
+  <modification type="public" template="message_macros" modification_key="bs_badge_post_m" description="Badge Studio — post avatar (size m)" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:avatar user="$user" size="m" defaultname="{$fallbackName}" itemprop="image" />]]></find>
+    <replace><![CDATA[<div class="bsAvatarWrap{{ $user.bs_badge ? ' bsAvatarWrap--hasBadge' : '' }}">
+    <xf:avatar user="$user" size="m" defaultname="{$fallbackName}" itemprop="image" />
+    <xf:macro template="bs_badge_macros" name="badge" arg-user="{$user}" arg-size="m" />
+</div>]]></replace>
+  </modification>
+  <modification type="public" template="message_macros" modification_key="bs_badge_post_s" description="Badge Studio — post avatar (size s)" execution_order="11" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:avatar user="$user" size="s" defaultname="{$fallbackName}" itemprop="image" />]]></find>
+    <replace><![CDATA[<div class="bsAvatarWrap{{ $user.bs_badge ? ' bsAvatarWrap--hasBadge' : '' }}">
+    <xf:avatar user="$user" size="s" defaultname="{$fallbackName}" itemprop="image" />
+    <xf:macro template="bs_badge_macros" name="badge" arg-user="{$user}" arg-size="s" />
+</div>]]></replace>
+  </modification>
+  <modification type="public" template="thread_list_macros" modification_key="bs_badge_thread_last_poster_xxs" description="Badge Studio — thread last-poster avatar (size xxs)" execution_order="11" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:avatar user="{$thread.LastPoster}" defaultname="{$thread.last_post_username}" size="xxs" />]]></find>
+    <replace><![CDATA[<div class="bsAvatarWrap{{ $thread.LastPoster.bs_badge ? ' bsAvatarWrap--hasBadge' : '' }}">
+	<xf:avatar user="{$thread.LastPoster}" defaultname="{$thread.last_post_username}" size="xxs" />
+	<xf:macro template="bs_badge_macros" name="badge" arg-user="{$thread.LastPoster}" arg-size="xxs" />
+</div>]]></replace>
+  </modification>
+  <modification type="public" template="thread_list_macros" modification_key="bs_badge_thread_starter_s" description="Badge Studio — thread starter avatar (size s)" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:avatar user="$thread.User" size="s" defaultname="{$thread.username}" />]]></find>
+    <replace><![CDATA[<div class="bsAvatarWrap{{ $thread.User.bs_badge ? ' bsAvatarWrap--hasBadge' : '' }}">
+	<xf:avatar user="$thread.User" size="s" defaultname="{$thread.username}" />
+    <xf:macro template="bs_badge_macros" name="badge" arg-user="{$thread.User}" arg-size="s" />
+</div>]]></replace>
+  </modification>
+  <modification type="public" template="widget_newest_members" modification_key="bs_badge_newest_members_s" description="Badge Studio — newest members avatar (size s)" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:avatar user="$user" size="s" img="true" />]]></find>
+    <replace><![CDATA[<div class="bsAvatarWrap{{ $user.bs_badge ? ' bsAvatarWrap--hasBadge' : '' }}">
+	<xf:avatar user="$user" size="s" img="true" />
+	<xf:macro template="bs_badge_macros" name="badge" arg-user="{$user}" arg-size="s" />
+</div>]]></replace>
+  </modification>
+</template_modifications>

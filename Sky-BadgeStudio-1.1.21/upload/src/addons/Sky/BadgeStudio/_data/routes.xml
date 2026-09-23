@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<routes>
+  <route route_type="admin" route_prefix="bs-badges" format=":int&lt;badge_id&gt;/" controller="Sky\BadgeStudio:Badge" context="bs_badge_studio"/>
+  <route route_type="admin" route_prefix="bs-user-badges" format=":int&lt;user_id&gt;/" controller="Sky\BadgeStudio:UserBadge" context="bs_badge_studio"/>
+</routes>

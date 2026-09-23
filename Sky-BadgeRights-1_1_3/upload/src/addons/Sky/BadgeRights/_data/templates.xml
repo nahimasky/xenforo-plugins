@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+  <template type="admin" title="sbr_mapping_list" version_id="1000000" version_string="1.0.0"><![CDATA[<xf:title>{{ phrase('sbr_badge_rights_mappings') }}</xf:title>
+
+<xf:pageaction>
+    <xf:button href="{{ link('sky-badge-rights-map/add') }}" icon="add">{{ phrase('sbr_add_mapping') }}</xf:button>
+</xf:pageaction>
+
+<div class="block">
+    <div class="block-container">
+        <p>{{ phrase('sbr_mapping_list_explain') }}</p>
+    </div>
+</div>
+
+<xf:if is="$mappings is not empty">
+    <div class="block">
+        <div class="block-container">
+            <xf:datalist>
+                <xf:datarow rowtype="header">
+                    <xf:cell>{{ phrase('sbr_badge_group') }}</xf:cell>
+                    <xf:cell>{{ phrase('sbr_logs_moderator_actions') }}</xf:cell>
+                    <xf:cell>{{ phrase('sbr_note') }}</xf:cell>
+                    <xf:cell/>
+                </xf:datarow>
+                <xf:foreach loop="$mappings" value="$mapping">
+                    <xf:datarow href="{{ link('sky-badge-rights-map/edit', $mapping, {'group_id': $mapping.group_id}) }}">
+                        <xf:cell><strong>{$mapping.UserGroup.title}</strong></xf:cell>
+                        <xf:cell>{{ $mapping.is_moderator ? phrase('yes') : phrase('no') }}</xf:cell>
+                        <xf:cell>{$mapping.note}</xf:cell>
+                        <xf:cell class="dataList-cell--min">
+                            <xf:button href="{{ link('sky-badge-rights-map/edit', $mapping, {'group_id': $mapping.group_id}) }}" icon="edit" class="button--icon button--icon--edit"/>
+                            <xf:button href="{{ link('sky-badge-rights-map/delete', $mapping, {'group_id': $mapping.group_id}) }}" icon="delete" class="button--icon button--icon--delete"/>
+                        </xf:cell>
+                    </xf:datarow>
+                </xf:foreach>
+            </xf:datalist>
+        </div>
+    </div>
+<xf:else />
+    <div class="blockMessage">{{ phrase('sbr_no_mappings_yet') }}</div>
+</xf:if>]]></template>
+  <template type="admin" title="sbr_mapping_edit" version_id="1000000" version_string="1.0.0"><![CDATA[<xf:title>{{ $mapping.group_id ? phrase('sbr_edit_mapping') : phrase('sbr_add_mapping') }}</xf:title>
+
+<xf:form action="{{ $mapping.group_id ? link('sky-badge-rights-map/edit', $mapping, {'group_id': $mapping.group_id}) : link('sky-badge-rights-map/add') }}" class="block" ajax="true">
+    <div class="block-container">
+        <xf:if is="$mapping.group_id">
+            <xf:formrow label="{{ phrase('sbr_badge_group') }}">
+                <strong>{$mapping.UserGroup.title}</strong>
+            </xf:formrow>
+        <xf:else />
+            <xf:selectrow name="group_id" label="{{ phrase('sbr_badge_group') }}" hint="{{ phrase('sbr_badge_group_hint') }}">
+                <xf:option value="">{{ phrase('please_select') }}</xf:option>
+                <xf:foreach loop="$groups" value="$group">
+                    <xf:option value="{$group.user_group_id}">{$group.title}</xf:option>
+                </xf:foreach>
+            </xf:selectrow>
+        </xf:if>
+
+        <xf:checkboxrow label="{{ phrase('sbr_logs_moderator_actions') }}" hint="{{ phrase('sbr_is_moderator_hint') }}">
+            <xf:option name="is_moderator" value="1" selected="{$mapping.is_moderator}">{{ phrase('sbr_is_moderator_option') }}</xf:option>
+        </xf:checkboxrow>
+
+        <xf:textboxrow name="note" value="{$mapping.note}" maxlength="255" label="{{ phrase('sbr_note') }}" hint="{{ phrase('sbr_note_hint') }}" />
+
+        <xf:submitrow submit="{{ phrase('save') }}" icon="save" />
+    </div>
+</xf:form>]]></template>
+  <template type="admin" title="sbr_mapping_delete" version_id="1000000" version_string="1.0.0"><![CDATA[<xf:title>{{ phrase('sbr_delete_mapping') }}</xf:title>
+
+<xf:form action="{{ link('sky-badge-rights-map/delete', $mapping, {'group_id': $mapping.group_id}) }}" class="block">
+    <div class="block-container">
+        <div class="block-body">
+            {{ phrase('sbr_delete_mapping_confirm', {'group': $mapping.UserGroup.title}) }}
+        </div>
+        <xf:submitrow submit="{{ phrase('delete') }}" icon="delete" />
+    </div>
+</xf:form>]]></template>
+  <template type="admin" title="sbr_assign_index" version_id="1000000" version_string="1.0.0"><![CDATA[<xf:title>{{ phrase('sbr_assign_badges') }}</xf:title>
+
+<xf:if is="$mappings is empty">
+    <div class="blockMessage">
+        {{ phrase('sbr_no_mappings_configured') }}
+        <a href="{{ link('sky-badge-rights-map') }}">{{ phrase('sbr_configure_mappings_link') }}</a>
+    </div>
+<xf:else />
+    <xf:form action="{{ link('sky-badge-rights/assign') }}" class="block" ajax="true">
+        <div class="block-container">
+            <xf:textboxrow name="username" label="{{ phrase('username') }}" required="true" />
+
+            <xf:selectrow name="group_id" label="{{ phrase('sbr_badge_group') }}">
+                <xf:foreach loop="$mappings" value="$mapping">
+                    <xf:option value="{$mapping.group_id}">{$mapping.UserGroup.title}</xf:option>
+                </xf:foreach>
+            </xf:selectrow>
+
+            <xf:submitrow submit="{{ phrase('sbr_assign') }}" icon="add" />
+        </div>
+    </xf:form>
+
+    <xf:foreach loop="$rows" value="$row">
+        <div class="block">
+            <div class="block-container">
+                <h3 class="block-header">{$row.mapping.UserGroup.title}</h3>
+
+                <xf:if is="$row.holders is not empty">
+                    <xf:datalist>
+                        <xf:foreach loop="$row.holders" value="$holder">
+                            <xf:datarow>
+                                <xf:cell>{$holder.username}</xf:cell>
+                                <xf:cell class="dataList-cell--min">
+                                    <xf:form action="{{ link('sky-badge-rights/unassign') }}">
+                                        <xf:hiddenval name="user_id" value="{$holder.user_id}" />
+                                        <xf:hiddenval name="group_id" value="{$row.mapping.group_id}" />
+                                        <xf:button type="submit" class="button--link" icon="delete">{{ phrase('sbr_unassign') }}</xf:button>
+                                    </xf:form>
+                                </xf:cell>
+                            </xf:datarow>
+                        </xf:foreach>
+                    </xf:datalist>
+                <xf:else />
+                    <p class="u-muted">{{ phrase('sbr_nobody_has_this_badge') }}</p>
+                </xf:if>
+            </div>
+        </div>
+    </xf:foreach>
+</xf:if>]]></template>
+</templates>

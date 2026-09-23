@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+  <template type="admin" title="bs_badge_delete" version_id="1001220" version_string="1.1.12"><![CDATA[<xf:title>{{ phrase('bs_action_delete') }}</xf:title>
+
+<xf:form action="{{ link('bs-badges/delete', $badge) }}" method="POST" class="block">
+    <div class="block-container">
+        <p>{{ phrase('bs_delete_badge_confirm') }}</p>
+        <p><strong>{$badge.title}</strong></p>
+        <xf:submitrow icon="delete" submit="{{ phrase('bs_action_delete') }}" />
+    </div>
+</xf:form>]]></template>
+  <template type="admin" title="bs_badge_edit" version_id="1001220" version_string="1.1.12"><![CDATA[<xf:title>{{ phrase('bs_add_badge') }}</xf:title>
+
+<xf:form action="{{ link('bs-badges/save', $badge) }}" method="POST" class="block">
+    <div class="block-container">
+        <xf:textboxrow name="title" label="{{ phrase('bs_badge_title') }}" value="{$badge.title}" required="true" maxlength="50" />
+        <xf:textboxrow name="color" label="{{ phrase('bs_badge_color') }}" value="{$badge.color}" placeholder="#C81E4D" hint="{{ phrase('bs_badge_color_hint') }}" />
+        <xf:radiorow name="icon" label="{{ phrase('bs_badge_icon') }}" value="{$badge.icon}">
+            <xf:foreach loop="$icons" key="$key" value="$icon">
+                <xf:option value="{$key}" label="{$icon.label}" />
+            </xf:foreach>
+            <xf:option value="custom" label="{{ phrase('bs_icon_custom_font_awesome') }}" />
+        </xf:radiorow>
+        <xf:textboxrow name="custom_fa_icon" label="{{ phrase('bs_custom_fa_icon') }}" value="{$badge.custom_fa_icon}" hint="{{ phrase('bs_custom_fa_icon_hint') }}" maxlength="60" />
+        <xf:submitrow icon="save" submit="{{ phrase('bs_action_save') }}" />
+    </div>
+</xf:form>]]></template>
+  <template type="admin" title="bs_badge_list" version_id="1001220" version_string="1.1.12"><![CDATA[<xf:title>{{ phrase('bs_badge_library') }}</xf:title>
+
+<div class="block">
+    <div class="block-container">
+        <a href="{{ link('bs-badges/add') }}" class="button--primary button">{{ phrase('bs_add_badge') }}</a>
+    </div>
+</div>
+
+<div class="block">
+    <div class="block-container">
+        <xf:datalist>
+            <xf:datarow rowtype="header">
+                <xf:cell></xf:cell>
+                <xf:cell>{{ phrase('bs_badge_title') }}</xf:cell>
+                <xf:cell></xf:cell>
+            </xf:datarow>
+
+            <xf:foreach loop="$badges" value="$badge">
+                <xf:datarow>
+                    <xf:cell>
+                        <span class="bsAdminBadgePreview" style="background:{$badge.color};">
+                            <xf:if is="$badge.icon == 'custom' AND $badge.getCustomFaIcon()">
+                                <xf:fa icon="{$badge.getCustomFaIcon()}" />
+                            <xf:elseif is="$badge.icon == 'letter'" />
+                                {$badge.getIconLetter()}
+                            <xf:else />
+                                <svg viewBox="0 0 24 24" width="16" height="16">{$badge.getIconSvg()|raw}</svg>
+                            </xf:if>
+                        </span>
+                    </xf:cell>
+                    <xf:cell>{$badge.title}</xf:cell>
+                    <xf:cell>
+                        <a href="{{ link('bs-badges/edit', $badge) }}">{{ phrase('bs_action_edit') }}</a>
+                        &middot;
+                        <a href="{{ link('bs-badges/delete', $badge) }}" class="concealed" data-xf-click="overlay">{{ phrase('bs_action_delete') }}</a>
+                    </xf:cell>
+                </xf:datarow>
+            </xf:foreach>
+        </xf:datalist>
+    </div>
+</div>]]></template>
+  <template type="admin" title="bs_userbadge_edit" version_id="1001220" version_string="1.1.12"><![CDATA[<xf:title>{$user.username}</xf:title>
+
+<xf:form action="{{ link('bs-user-badges/edit', $user) }}" method="POST" class="block">
+    <div class="block-container">
+        <xf:formrow label="{{ phrase('bs_username') }}"><span>{$user.username}</span></xf:formrow>
+        <xf:radiorow name="badge_id" label="{{ phrase('bs_badge_assign') }}" value="{$currentBadgeId}">
+            <xf:option value="0" label="{{ phrase('bs_badge_none') }}" />
+        <xf:foreach loop="$badges" value="$badge">
+            <xf:option value="{$badge.badge_id}" label="{$badge.title}" />
+        </xf:foreach>
+        </xf:radiorow>
+        <xf:submitrow icon="save" submit="{{ phrase('bs_action_save') }}" />
+    </div>
+</xf:form>
+
+<xf:if is="$log">
+    <div class="block">
+        <div class="block-container">
+            <xf:datalist>
+                <xf:datarow rowtype="header">
+                    <xf:cell>{{ phrase('bs_date') }}</xf:cell>
+                    <xf:cell>{{ phrase('bs_badge_change') }}</xf:cell>
+                    <xf:cell>{{ phrase('bs_changed_by') }}</xf:cell>
+                </xf:datarow>
+                <xf:foreach loop="$log" value="$entry">
+                    <xf:datarow>
+                        <xf:cell><xf:date time="{$entry.log_date}" /></xf:cell>
+                        <xf:cell>
+                            {{ $entry.OldBadge ? $entry.OldBadge.title : phrase('bs_badge_none') }}
+                            →
+                            {{ $entry.NewBadge ? $entry.NewBadge.title : phrase('bs_badge_none') }}
+                        </xf:cell>
+                        <xf:cell>{$entry.ChangedBy.username}</xf:cell>
+                    </xf:datarow>
+                </xf:foreach>
+            </xf:datalist>
+        </div>
+    </div>
+</xf:if>]]></template>
+  <template type="admin" title="bs_userbadge_list" version_id="1001220" version_string="1.1.12"><![CDATA[<xf:title>{{ phrase('bs_badge_assign') }}</xf:title>
+
+<xf:form action="{{ link('bs-user-badges') }}" method="GET" class="block">
+    <div class="block-container">
+        <xf:textboxrow name="username" value="{$usernameFilter}" label="{{ phrase('bs_username') }}" placeholder="{{ phrase('bs_username') }}" />
+        <xf:submitrow icon="search" submit="{{ phrase('bs_action_search') }}" />
+    </div>
+</xf:form>
+
+<div class="block">
+    <div class="block-container">
+            <xf:datalist>
+                <xf:datarow rowtype="header">
+                    <xf:cell>{{ phrase('bs_username') }}</xf:cell>
+                <xf:cell>{{ phrase('bs_badge_assign') }}</xf:cell>
+                <xf:cell></xf:cell>
+            </xf:datarow>
+            <xf:foreach loop="$rows" value="$row">
+                <xf:datarow>
+                    <xf:cell><a href="{{ link('members', $row.user) }}">{$row.user.username}</a></xf:cell>
+                    <xf:cell>
+                        <xf:if is="$row.userBadge AND $row.userBadge.Badge">
+                            <span class="bsAdminBadgePreview" style="background:{$row.userBadge.Badge.color};">
+                                <xf:if is="$row.userBadge.Badge.icon == 'custom' AND $row.userBadge.Badge.getCustomFaIcon()">
+                                    <xf:fa icon="{$row.userBadge.Badge.getCustomFaIcon()}" />
+                                <xf:elseif is="$row.userBadge.Badge.icon == 'letter'" />
+                                    {$row.userBadge.Badge.getIconLetter()}
+                                <xf:else />
+                                    <svg viewBox="0 0 24 24" width="16" height="16">{$row.userBadge.Badge.getIconSvg()|raw}</svg>
+                                </xf:if>
+                            </span>
+                            {$row.userBadge.Badge.title}
+                        <xf:else />
+                            <span class="u-muted">{{ phrase('bs_badge_none') }}</span>
+                        </xf:if>
+                    </xf:cell>
+                    <xf:cell><a href="{{ link('bs-user-badges/edit', $row.user) }}">{{ phrase('bs_action_edit') }}</a></xf:cell>
+                </xf:datarow>
+            </xf:foreach>
+        </xf:datalist>
+    </div>
+</div>
+
+<xf:pagenav link="bs-user-badges" page="{$page}" perpage="{$perPage}" total="{$total}" />]]></template>
+  <template type="public" title="bs_badge_macros" version_id="1001310" version_string="1.1.21"><![CDATA[<xf:macro name="badge" arg-user="" arg-size="m">
+<xf:css src="bs_badgestudio.less" />
+<xf:if is="$user.bs_badge">
+<xf:set var="$b" value="{$user.bs_badge}" />
+<span class="bsAvatarBadge bsAvatarBadge--{$size}" style="background:{$b.color}" data-xf-init="tooltip" data-original-title="{$b.title}">
+            <xf:if is="$b.icon == 'custom' AND $b.getCustomFaIcon()">
+                <xf:fa icon="{$b.getCustomFaIcon()}" />
+            <xf:elseif is="$b.icon == 'letter'" />
+                <span class="bsAvatarBadge-letter">{$b.getIconLetter()}</span>
+            <xf:else />
+                <svg viewBox="0 0 24 24" width="14" height="14">{$b.getIconSvg()|raw}</svg>
+            </xf:if>
+        </span>
+	</xf:if>
+</xf:macro>]]></template>
+  <template type="public" title="bs_badgestudio.less" version_id="1001310" version_string="1.1.21"><![CDATA[.bsAvatarWrap
+{
+    position: relative;
+    display: inline-block;
+}
+
+.bsAvatarBadge
+{
+    position: absolute;
+    z-index: 1;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border: 2px solid #0A0A0C;
+    border-radius: 50%;
+    color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.message-avatar-wrapper .bsAvatarWrap--hasBadge ~ .message-avatar-online
+{
+    display: none;
+}
+
+.bsAvatarBadge svg
+{
+    fill: currentColor;
+}
+
+.bsAvatarBadge .fa,
+.bsAdminBadgePreview .fa
+{
+    font-size: 12px;
+}
+
+.bsAvatarBadge-letter
+{
+display: inline-block;
+transform: translateY(-1px);
+}
+
+.bsAvatarBadge--s
+{
+	bottom: -3px;
+	width: 17px;
+	height: 17px;
+	border-width: 1.5px;
+	font-size: 8px;
+}
+
+.bsAvatarBadge--xs
+{
+	bottom: -3px;
+	width: 14px;
+	height: 14px;
+	border-width: 1px;
+	font-size: 7px;
+}
+
+.bsAvatarBadge--xxs
+{
+	bottom: -2px;
+	width: 11px;
+	height: 11px;
+	border-width: 1px;
+	font-size: 6px;
+}
+
+.bsAvatarBadge--s .fa,
+.bsAvatarBadge--xs .fa,
+.bsAvatarBadge--xxs .fa
+{
+	font-size: inherit;
+}
+
+.bsAdminBadgePreview
+{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+}
+]]></template>
+</templates>

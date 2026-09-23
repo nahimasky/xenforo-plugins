@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<code_event_listeners>
+  <code_event_listener event_id="entity_post_delete" callback_class="Sky\BadgeRights\Listener" callback_method="userGroupPostDelete" active="1" hint="XF:UserGroup" execute_order="10"/>
+</code_event_listeners>
