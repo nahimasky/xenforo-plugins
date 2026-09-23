@@ -41,8 +41,8 @@ class Setup extends AbstractSetup
     public function upgrade1001000Step1()
     {
         // Reconcile existing moderator mappings after upgrading from 1.0.0.
-        $repo = $this->app()->repository('Sky\BadgeRights:Mapping');
-        $service = $this->app()->service('Sky\BadgeRights:Assign');
+        $repo = $this->app()->repository('Sky\\BadgeRights:Mapping');
+        $service = $this->app()->service('Sky\\BadgeRights:Assign');
 
         foreach ($repo->findMappingsOrdered()->fetch() as $mapping)
         {
@@ -60,6 +60,14 @@ class Setup extends AbstractSetup
                 }
             }
         }
+    }
+
+    /**
+     * Version 1.1.4: refreshed admin templates with corrected entity links.
+     * XenForo imports the updated XML data during the add-on upgrade.
+     */
+    public function upgrade1001004Step1()
+    {
     }
 
     public function uninstallStep1()
