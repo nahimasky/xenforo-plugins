@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <templates>
-  <template type="admin" title="sbr_mapping_list" version_id="1000000" version_string="1.0.0"><![CDATA[<xf:title>{{ phrase('sbr_badge_rights_mappings') }}</xf:title>
+  <template type="admin" title="sbr_mapping_list" version_id="1001004" version_string="1.1.4"><![CDATA[<xf:title>{{ phrase('sbr_badge_rights_mappings') }}</xf:title>
 
 <xf:pageaction>
     <xf:button href="{{ link('sky-badge-rights-map/add') }}" icon="add">{{ phrase('sbr_add_mapping') }}</xf:button>
@@ -23,13 +23,13 @@
                     <xf:cell/>
                 </xf:datarow>
                 <xf:foreach loop="$mappings" value="$mapping">
-                    <xf:datarow href="{{ link('sky-badge-rights-map/edit', $mapping, {'group_id': $mapping.group_id}) }}">
+                    <xf:datarow href="{{ link('sky-badge-rights-map/edit', $mapping) }}">
                         <xf:cell><strong>{$mapping.UserGroup.title}</strong></xf:cell>
                         <xf:cell>{{ $mapping.is_moderator ? phrase('yes') : phrase('no') }}</xf:cell>
                         <xf:cell>{$mapping.note}</xf:cell>
                         <xf:cell class="dataList-cell--min">
-                            <xf:button href="{{ link('sky-badge-rights-map/edit', $mapping, {'group_id': $mapping.group_id}) }}" icon="edit" class="button--icon button--icon--edit"/>
-                            <xf:button href="{{ link('sky-badge-rights-map/delete', $mapping, {'group_id': $mapping.group_id}) }}" icon="delete" class="button--icon button--icon--delete"/>
+                            <xf:button href="{{ link('sky-badge-rights-map/edit', $mapping) }}" icon="edit" class="button--icon button--icon--edit"/>
+                            <xf:button href="{{ link('sky-badge-rights-map/delete', $mapping) }}" icon="delete" class="button--icon button--icon--delete"/>
                         </xf:cell>
                     </xf:datarow>
                 </xf:foreach>
@@ -39,9 +39,9 @@
 <xf:else />
     <div class="blockMessage">{{ phrase('sbr_no_mappings_yet') }}</div>
 </xf:if>]]></template>
-  <template type="admin" title="sbr_mapping_edit" version_id="1000000" version_string="1.0.0"><![CDATA[<xf:title>{{ $mapping.group_id ? phrase('sbr_edit_mapping') : phrase('sbr_add_mapping') }}</xf:title>
+  <template type="admin" title="sbr_mapping_edit" version_id="1001004" version_string="1.1.4"><![CDATA[<xf:title>{{ $mapping.group_id ? phrase('sbr_edit_mapping') : phrase('sbr_add_mapping') }}</xf:title>
 
-<xf:form action="{{ $mapping.group_id ? link('sky-badge-rights-map/edit', $mapping, {'group_id': $mapping.group_id}) : link('sky-badge-rights-map/add') }}" class="block" ajax="true">
+<xf:form action="{{ $mapping.group_id ? link('sky-badge-rights-map/edit', $mapping) : link('sky-badge-rights-map/add') }}" class="block" ajax="true">
     <div class="block-container">
         <xf:if is="$mapping.group_id">
             <xf:formrow label="{{ phrase('sbr_badge_group') }}">
@@ -65,9 +65,9 @@
         <xf:submitrow submit="{{ phrase('save') }}" icon="save" />
     </div>
 </xf:form>]]></template>
-  <template type="admin" title="sbr_mapping_delete" version_id="1000000" version_string="1.0.0"><![CDATA[<xf:title>{{ phrase('sbr_delete_mapping') }}</xf:title>
+  <template type="admin" title="sbr_mapping_delete" version_id="1001004" version_string="1.1.4"><![CDATA[<xf:title>{{ phrase('sbr_delete_mapping') }}</xf:title>
 
-<xf:form action="{{ link('sky-badge-rights-map/delete', $mapping, {'group_id': $mapping.group_id}) }}" class="block">
+<xf:form action="{{ link('sky-badge-rights-map/delete', $mapping) }}" class="block">
     <div class="block-container">
         <div class="block-body">
             {{ phrase('sbr_delete_mapping_confirm', {'group': $mapping.UserGroup.title}) }}
